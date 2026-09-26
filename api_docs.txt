@@ -1,30 +1,52 @@
-API's
+MERN GROCERY STORE - DEPLOYED BACKEND API LINKS
 
-export const productUrl = "http://localhost:8000/api"
-export const imageUrl = "http://localhost:8000"
-export const adminUrl = "http://localhost:8000/admin"
-export const emailUrl = "http://localhost:8000/email"
-export const cartUrl = "http://localhost:8000/cart"
+Base URL: "https://mern-grocery-store-backend-4.onrender.com"
 
-Product Routes
+PRODUCT APIs GET - Show Products:
+https://mern-grocery-store-backend-4.onrender.com/api/show-products
 
-router.post("/add-product", protected.adminmiddleware, upload.single("image"), controller.createProduct)
-router.get("/show-products", controller.getproducts)
-router.get("/search", searchcontroller.searchProducts)
+GET - Search Products:
+https://mern-grocery-store-backend-4.onrender.com/api/search
 
-Admin Routes
+POST - Add Product:
+https://mern-grocery-store-backend-4.onrender.com/api/add-product
 
-router.post("/admin-reg", controller.adminRegister)
-router.post("/adminlogin", controller.adminlogin)
+ADMIN APIs POST - Admin Register:
+https://mern-grocery-store-backend-4.onrender.com/admin/admin-reg
 
-Email Routes
+POST - Admin Login:
+https://mern-grocery-store-backend-4.onrender.com/admin/adminlogin
 
-router.post("/sendotp", emailController.sendOtp)
-router.post("/verifyotp", emailController.verifyotp)
+EMAIL APIs POST - Send OTP:
+https://mern-grocery-store-backend-4.onrender.com/email/sendotp
 
-Cart Routes
+POST - Verify OTP:
+https://mern-grocery-store-backend-4.onrender.com/email/verifyotp
 
-router.post("/addtocart", email.emailmiddleware, controller.addToCart)
-router.get("/cartdetails", email.emailmiddleware, controller.getCartItems)
-router.put("/update-cart", email.emailmiddleware, controller.updateQuantity)
-router.delete("/delete/:productId", email.emailmiddleware, controller.removeFromCart)
+CART APIs POST - Add To Cart:
+https://mern-grocery-store-backend-4.onrender.com/cart/addtocart
+
+GET - Cart Details:
+https://mern-grocery-store-backend-4.onrender.com/cart/cartdetails
+
+PUT - Update Cart:
+https://mern-grocery-store-backend-4.onrender.com/cart/update-cart
+
+DELETE - Remove From Cart:
+https://mern-grocery-store-backend-4.onrender.com/cart/delete/:productId
+
+IMAGE BASE URL https://mern-grocery-store-backend-4.onrender.com
+
+Uploaded images are accessed using:
+https://mern-grocery-store-backend-4.onrender.com/uploads/
+
+FRONTEND API CONSTANTS
+
+export const productUrl =
+“https://mern-grocery-store-backend-4.onrender.com/api”; export const
+imageUrl = “https://mern-grocery-store-backend-4.onrender.com”; export
+const adminUrl =
+“https://mern-grocery-store-backend-4.onrender.com/admin”; export const
+emailUrl = “https://mern-grocery-store-backend-4.onrender.com/email”;
+export const cartUrl =
+“https://mern-grocery-store-backend-4.onrender.com/cart”;
