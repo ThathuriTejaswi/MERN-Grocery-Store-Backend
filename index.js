@@ -7,9 +7,10 @@ const path = require("path");
 const adminroutes=require("./routes/adminroutes")
 const emailroutes=require("./routes/emailroutes")
 const cartroutes=require("./routes/cartroutes")
+const cors = require("cors");
 const app=express()
 app.use(express.json());
-
+app.use(cors());
  dotEnv.config()
 //  mongoose.connect(process.env.MONGO_URI)
 //  .then(()=>{
@@ -42,7 +43,7 @@ mongoose.connection.on("disconnected", () => {
  app.use("/admin",adminroutes)
  app.use("/email",emailroutes)
  app.use("/cart",cartroutes)
-const Port=8000;
+const Port = process.env.PORT || 8000;
 app.listen(Port,()=>{
 console.log(`Server running on ${Port}`)
 })
