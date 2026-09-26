@@ -1,0 +1,10 @@
+const controller=require("../controllers/productcontroller")
+const express=require("express")
+const upload=require("../middlewares/imagemiddleware")
+const protected=require("../middlewares/adminmiddleware")
+const searchcontroller=require("../controllers/searchcontroller")
+const router=express.Router()
+router.post("/add-product",protected.adminmiddleware,upload.single("image"),controller.createProduct)
+router.get("/show-products",controller.getproducts)
+router.get("/search",searchcontroller.searchProducts)
+module.exports=router

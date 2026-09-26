@@ -1,0 +1,30 @@
+API's
+
+export const productUrl = "http://localhost:8000/api"
+export const imageUrl = "http://localhost:8000"
+export const adminUrl = "http://localhost:8000/admin"
+export const emailUrl = "http://localhost:8000/email"
+export const cartUrl = "http://localhost:8000/cart"
+
+Product Routes
+
+router.post("/add-product", protected.adminmiddleware, upload.single("image"), controller.createProduct)
+router.get("/show-products", controller.getproducts)
+router.get("/search", searchcontroller.searchProducts)
+
+Admin Routes
+
+router.post("/admin-reg", controller.adminRegister)
+router.post("/adminlogin", controller.adminlogin)
+
+Email Routes
+
+router.post("/sendotp", emailController.sendOtp)
+router.post("/verifyotp", emailController.verifyotp)
+
+Cart Routes
+
+router.post("/addtocart", email.emailmiddleware, controller.addToCart)
+router.get("/cartdetails", email.emailmiddleware, controller.getCartItems)
+router.put("/update-cart", email.emailmiddleware, controller.updateQuantity)
+router.delete("/delete/:productId", email.emailmiddleware, controller.removeFromCart)
